@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<h2>Resultados de búsqueda: "{{ query }}"</h2>
+<ul>
+    {% for post in resultados %}
+        <li><b>{{ post.titulo }}</b> - {{ post.autor }}</li>
+    {% empty %}
+        <li>No se encontraron resultados.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

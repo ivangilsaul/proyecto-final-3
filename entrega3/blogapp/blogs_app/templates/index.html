@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<h2>Últimos Posts</h2>
+<ul>
+    {% for post in posts %}
+        <li><b>{{ post.titulo }}</b> ({{ post.fecha_publicacion|date:"d/m/Y" }}) - Autor: {{ post.autor }} | Categoría: {{ post.categoria }}</li>
+    {% empty %}
+        <li>No hay posts todavía.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
